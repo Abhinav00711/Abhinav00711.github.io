@@ -13,15 +13,27 @@
             margin: 0;
             font-family:Arial, Helvetica, sans-serif ;
         }
-        table,th,td{
-            border: 1px solid;
-            border-collapse: collapse;
-            padding: 5px 2px 5px 2px;
-            text-align:center;
+        #appointment {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
         }
-        th {
-            cursor: pointer;
-            background-color: rgb(93, 240, 115);
+
+        #appointment td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #appointment tr:nth-child(even){background-color: #f2f2f2;}
+
+        #appointment tr:hover {background-color: #ddd;}
+
+        #appointment th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
         }
         h1{
             margin-top: 3em;
@@ -46,7 +58,7 @@
     <div ng-controller="MyController">
         No of rows: <input type="number" ng-model="limit" min="1" max={{rowLimit}}>
         Search:<input type="search" ng-model="search" placeholder="Search Something"><br><br>
-        <table>
+        <table id="appointment">
             <tr>
                 <th ng-click="setTrDate()">Appointment Date &#8597;</th>
                 <th ng-click="setName()">Name &#8597;</th>
